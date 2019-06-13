@@ -16,10 +16,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         showSpinner = (Spinner) findViewById(R.id.spinner);
         getShowButton = (Button) findViewById(R.id.button);
         msgTextView = (TextView) findViewById(R.id.textview);
-        setContentView(R.layout.activity_main);
         String[] arraySpinner = new String[] {
                 "9.00 - 1.00", "2.00 - 5.00", "6.00 - 8.00"
         };
