@@ -1,5 +1,6 @@
 package com.timewaste.juassignmenttvshow;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -33,15 +34,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String showListText = showSpinner.getSelectedItem().toString();
+                String allList;
+
                 if(showListText=="9.00 - 1.00"){
-                    msgTextView.setText("1.Vorer Khobor\n2.Krishi o Manus\n3.Banglar Git");
+                    allList="1.Vorer Khobor\n2.Krishi o Manus\n3.Banglar Git";
                 }
                 else if (showListText=="2.00 - 5.00" ){
-                    msgTextView.setText("1.Dupurer Khobor\n2.Kishor Kontho\n3.Rabindro Git");
+                    allList="1.Dupurer Khobor\n2.Kishor Kontho\n3.Rabindro Git";
                 }
                 else{
-                    msgTextView.setText("1.Rater Khobor\n2.Sobar Kontho\n3.Nazrul Git");
+                    allList="1.Rater Khobor\n2.Sobar Kontho\n3.Nazrul Git";
                 }
+
+                Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                intent.putExtra("showList", allList);
+                startActivity(intent);
+
             }
         });
     }
